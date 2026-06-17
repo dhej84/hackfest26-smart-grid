@@ -125,10 +125,10 @@ body {
   display: flex; align-items: center; justify-content: center;
   font-size: 18px;
 }
-.icon-blue  { background: rgba(59,130,246,0.15); color: var(--blue); }
-.icon-lime  { background: rgba(163,230,53,0.15); color: var(--lime); }
-.icon-green { background: rgba(34,197,94,0.15);  color: #22c55e; }
-.icon-purple{ background: rgba(168,85,247,0.15); color: #a855f7; }
+.icon-blue   { background: rgba(59,130,246,0.15);  color: var(--blue); }
+.icon-lime   { background: rgba(163,230,53,0.15);  color: var(--lime); }
+.icon-green  { background: rgba(34,197,94,0.15);   color: #22c55e; }
+.icon-purple { background: rgba(168,85,247,0.15);  color: #a855f7; }
 
 /* ── CHARTS ROW ── */
 .charts-row {
@@ -144,7 +144,7 @@ body {
   padding: 20px;
 }
 .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-.chart-sub { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+.chart-sub   { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
 .chart-container { position: relative; height: 190px; }
 
 /* donut centre */
@@ -160,10 +160,10 @@ body {
 .donut-centre .dc-lbl { font-size: 10px; color: var(--muted); }
 
 .donut-legend { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
-.legend-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
-.legend-dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; flex-shrink: 0; }
-.legend-name { display: flex; align-items: center; color: var(--muted); }
-.legend-val { color: var(--text); font-weight: 500; }
+.legend-row   { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+.legend-dot   { width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; flex-shrink: 0; }
+.legend-name  { display: flex; align-items: center; color: var(--muted); }
+.legend-val   { color: var(--text); font-weight: 500; }
 
 /* high demand badge */
 .hd-badge {
@@ -191,12 +191,12 @@ body {
   gap: 12px;
   margin-top: 12px;
 }
-.opt-item { display: flex; flex-direction: column; gap: 4px; }
+.opt-item  { display: flex; flex-direction: column; gap: 4px; }
 .opt-label { font-size: 11px; color: var(--muted); }
-.opt-val { font-size: 17px; font-weight: 700; }
-.opt-sub { font-size: 10px; color: var(--muted); }
-.badge-low  { color: #22c55e; }
-.badge-red  { color: var(--red); }
+.opt-val   { font-size: 17px; font-weight: 700; }
+.opt-sub   { font-size: 10px; color: var(--muted); }
+.badge-low { color: #22c55e; }
+.badge-red { color: var(--red); }
 
 /* alerts */
 .alert-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
@@ -207,10 +207,10 @@ body {
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
 }
-.alert-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
-.dot-red    { background: var(--red); box-shadow: 0 0 6px var(--red); }
+.alert-dot  { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+.dot-red    { background: var(--red);    box-shadow: 0 0 6px var(--red); }
 .dot-yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
-.dot-blue   { background: var(--blue); box-shadow: 0 0 6px var(--blue); }
+.dot-blue   { background: var(--blue);   box-shadow: 0 0 6px var(--blue); }
 .alert-msg  { font-size: 12px; color: var(--text); line-height: 1.4; }
 .alert-time { font-size: 10px; color: var(--muted); margin-top: 2px; }
 
@@ -233,7 +233,7 @@ body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── CONTROL BAR (replaces sidebar form) ── */
+/* ── CONTROL BAR ── */
 .control-bar {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -243,8 +243,8 @@ body {
   gap: 16px;
   flex-wrap: wrap;
 }
-.ctrl-group { display: flex; align-items: center; gap: 8px; }
-.ctrl-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.ctrl-group  { display: flex; align-items: center; gap: 8px; }
+.ctrl-label  { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
 .ctrl-select, .ctrl-input {
   background: var(--card);
   border: 1px solid var(--border);
@@ -271,6 +271,17 @@ body {
   transition: opacity 0.15s;
 }
 .run-btn:hover { opacity: 0.88; }
+
+/* ── API STATUS BADGE ── */
+.api-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.api-live { background: rgba(163,230,53,0.12); color: var(--lime); border: 1px solid rgba(163,230,53,0.3); }
+.api-sim  { background: rgba(245,158,11,0.12); color: var(--yellow); border: 1px solid rgba(245,158,11,0.3); }
 </style>
 </head>
 <body>
@@ -295,6 +306,7 @@ body {
   <header class="topbar">
     <div class="topbar-title">Smart Grid AI Dashboard</div>
     <div class="topbar-right">
+      <span id="apiBadge" class="api-badge api-sim">● SIMULATION</span>
       <span>🔔</span>
       <span class="admin">Admin 👤</span>
     </div>
@@ -320,8 +332,8 @@ body {
       </select>
     </div>
     <div class="ctrl-group">
-      <span class="ctrl-label">Supply (MW)</span>
-      <input class="ctrl-input" type="number" id="ctrlSupply" value="950" min="100" max="9999">
+      <span class="ctrl-label">Grid Supply (MW)</span>
+      <input class="ctrl-input" type="number" id="ctrlSupply" value="800" min="100" max="9999">
     </div>
     <div class="ctrl-group">
       <span class="ctrl-label">Renewable (MW)</span>
@@ -346,7 +358,7 @@ body {
       <div class="stat-card">
         <div>
           <div class="stat-label">Predicted Demand</div>
-          <div class="stat-val" id="statDemand">850<span class="unit">MW</span></div>
+          <div class="stat-val" id="statDemand">—<span class="unit">MW</span></div>
           <div class="stat-sub" style="color:var(--yellow)">↑ Live Demand</div>
         </div>
         <div class="stat-icon icon-lime">〜</div>
@@ -362,7 +374,7 @@ body {
       <div class="stat-card">
         <div>
           <div class="stat-label">Grid Efficiency</div>
-          <div class="stat-val" id="statEff">89<span class="unit">%</span></div>
+          <div class="stat-val" id="statEff">—<span class="unit">%</span></div>
           <div class="stat-sub" style="color:#a855f7">Optimization Score</div>
         </div>
         <div class="stat-icon icon-purple">◎</div>
@@ -388,7 +400,7 @@ body {
         <div class="chart-container donut-wrap" style="height:160px">
           <canvas id="donutChart"></canvas>
           <div class="donut-centre">
-            <div class="dc-val" id="donutCentre">950<br><span style="font-size:11px;font-weight:400">MW</span></div>
+            <div class="dc-val" id="donutCentre">—<br><span style="font-size:11px;font-weight:400">MW</span></div>
             <div class="dc-lbl">Total Supply</div>
           </div>
         </div>
@@ -403,24 +415,24 @@ body {
         <div class="chart-title">Optimization Summary</div>
         <div class="opt-grid">
           <div class="opt-item">
-            <span class="opt-label">Optimization Status</span>
-            <span class="opt-val badge-low" id="optRisk">Low</span>
+            <span class="opt-label">Grid Status</span>
+            <span class="opt-val badge-low" id="optRisk">—</span>
             <span class="opt-sub">🛡 Protected</span>
           </div>
           <div class="opt-item">
-            <span class="opt-label">Power Saved</span>
-            <span class="opt-val" id="optSaved" style="color:var(--lime)">120 MW</span>
-            <span class="opt-sub" style="color:var(--lime)">🌿 13% improvement</span>
+            <span class="opt-label">Surplus Supply</span>
+            <span class="opt-val" id="optSaved" style="color:var(--lime)">— MW</span>
+            <span class="opt-sub" style="color:var(--lime)">🌿 After allocation</span>
           </div>
           <div class="opt-item">
             <span class="opt-label">Unserved Demand</span>
-            <span class="opt-val badge-red" id="optUnserved">20 MW</span>
-            <span class="opt-sub">⚡ Reduced</span>
+            <span class="opt-val badge-red" id="optUnserved">— MW</span>
+            <span class="opt-sub">⚡ Deficit</span>
           </div>
           <div class="opt-item">
             <span class="opt-label">Efficiency Gain</span>
-            <span class="opt-val" id="optCo2" style="color:var(--blue)">+21%</span>
-            <span class="opt-sub">☁ Estimated</span>
+            <span class="opt-val" id="optCo2" style="color:var(--blue)">—%</span>
+            <span class="opt-sub">☁ vs baseline</span>
           </div>
         </div>
       </div>
@@ -430,24 +442,10 @@ body {
         <div class="chart-title">Alerts</div>
         <div class="alert-list" id="alertList">
           <div class="alert-item">
-            <div class="alert-dot dot-red"></div>
-            <div>
-              <div class="alert-msg">High demand predicted in Zone A</div>
-              <div class="alert-time">Today</div>
-            </div>
-          </div>
-          <div class="alert-item">
-            <div class="alert-dot dot-yellow"></div>
-            <div>
-              <div class="alert-msg">Zone B demand increasing</div>
-              <div class="alert-time">Today</div>
-            </div>
-          </div>
-          <div class="alert-item">
             <div class="alert-dot dot-blue"></div>
             <div>
-              <div class="alert-msg">Optimization completed successfully</div>
-              <div class="alert-time">Today</div>
+              <div class="alert-msg">Run optimization to see live alerts</div>
+              <div class="alert-time">Waiting</div>
             </div>
           </div>
         </div>
@@ -464,22 +462,21 @@ body {
 </div>
 
 <script>
-// ── Chart.js defaults ─────────────────────────────────────────────────────
-Chart.defaults.color = '#64748b';
-Chart.defaults.borderColor = '#1f2d40';
-Chart.defaults.font.family = 'Inter';
+// ── Chart.js defaults ────────────────────────────────────────────────────────
+Chart.defaults.color        = '#64748b';
+Chart.defaults.borderColor  = '#1f2d40';
+Chart.defaults.font.family  = 'Inter';
 
-// ── Zone colours & names ──────────────────────────────────────────────────
-const ZONES       = ['Zone A','Zone B','Zone C'];
-const ZONE_COLORS = ['#3b82f6','#22c55e','#f59e0b'];
-const ZONE_MW     = [350, 300, 250];
+// ── Zone config ──────────────────────────────────────────────────────────────
+const ZONES       = ['Zone A', 'Zone B', 'Zone C'];
+const ZONE_COLORS = ['#3b82f6', '#22c55e', '#f59e0b'];
 
-// ── Line chart (Demand Forecast) ──────────────────────────────────────────
-const hours = ['12 AM','2','4','6','8','10','12 PM','2','4','6','8','10','12 AM'];
-const actualBase    = [620,580,560,540,590,700,820,860,870,950,980,900,750];
-const predictedBase = [630,590,555,545,600,720,830,850,875,970,990,910,760];
+// ── Line chart ───────────────────────────────────────────────────────────────
+const hours       = ['12 AM','2','4','6','8','10','12 PM','2','4','6','8','10','12 AM'];
+const actualBase  = [620,580,560,540,590,700,820,860,870,950,980,900,750];
+const predictBase = [630,590,555,545,600,720,830,850,875,970,990,910,760];
 
-const lineCtx = document.getElementById('lineChart').getContext('2d');
+const lineCtx   = document.getElementById('lineChart').getContext('2d');
 const lineChart = new Chart(lineCtx, {
   type: 'line',
   data: {
@@ -497,9 +494,9 @@ const lineChart = new Chart(lineCtx, {
       },
       {
         label: 'Predicted Demand',
-        data: predictedBase,
+        data: predictBase,
         borderColor: '#a3e635',
-        borderDash: [5,4],
+        borderDash: [5, 4],
         borderWidth: 2,
         pointRadius: 0,
         tension: 0.45,
@@ -523,14 +520,14 @@ const lineChart = new Chart(lineCtx, {
   }
 });
 
-// ── Donut chart ───────────────────────────────────────────────────────────
-const donutCtx = document.getElementById('donutChart').getContext('2d');
+// ── Donut chart ──────────────────────────────────────────────────────────────
+const donutCtx   = document.getElementById('donutChart').getContext('2d');
 const donutChart = new Chart(donutCtx, {
   type: 'doughnut',
   data: {
     labels: ZONES,
     datasets: [{
-      data: ZONE_MW,
+      data: [350, 300, 250],
       backgroundColor: ZONE_COLORS,
       borderWidth: 2,
       borderColor: '#1a2233',
@@ -540,168 +537,204 @@ const donutChart = new Chart(donutCtx, {
     responsive: true,
     maintainAspectRatio: false,
     cutout: '68%',
-    plugins: { legend: { display: false }, tooltip: {
-      callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed} MW` }
-    }}
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed} MW` } }
+    }
   }
 });
 
 function buildLegend(mwVals) {
-  const leg = document.getElementById('donutLegend');
-  const pcts = ['39%','33%','28%'];
-  leg.innerHTML = ZONES.map((z,i) => `
-    <div class="legend-row">
-      <span class="legend-name"><span class="legend-dot" style="background:${ZONE_COLORS[i]}"></span>${z}</span>
-      <span class="legend-val">${mwVals[i]} MW (${pcts[i]})</span>
-    </div>`).join('');
+  const total = mwVals.reduce((a, b) => a + b, 0);
+  document.getElementById('donutLegend').innerHTML = ZONES.map((z, i) => {
+    const pct = total > 0 ? Math.round((mwVals[i] / total) * 100) : 0;
+    return `
+      <div class="legend-row">
+        <span class="legend-name">
+          <span class="legend-dot" style="background:${ZONE_COLORS[i]}"></span>${z}
+        </span>
+        <span class="legend-val">${mwVals[i]} MW (${pct}%)</span>
+      </div>`;
+  }).join('');
 }
-buildLegend(ZONE_MW);
+buildLegend([350, 300, 250]);
 
-// ── Update dashboard with API result ─────────────────────────────────────
-function updateDashboard(optResult, supply) {
-  const { efficiency_after, efficiency_before, total_demand,
-          total_allocated, allocations, alerts, status } = optResult;
+// ── Update dashboard from API result ────────────────────────────────────────
+function updateDashboard(opt, totalSupply) {
+  const {
+    efficiency_after,
+    efficiency_before,
+    total_demand,
+    total_allocated,
+    allocations,
+    alerts,
+    status
+  } = opt;
 
-  // stat cards
-  document.getElementById('statDemand').innerHTML = Math.round(total_demand) + '<span class="unit">MW</span>';
-  document.getElementById('statSupply').innerHTML  = Math.round(supply) + '<span class="unit">MW</span>';
-  document.getElementById('statEff').innerHTML     = efficiency_after + '<span class="unit">%</span>';
+  // ── Stat cards ──
+  document.getElementById('statDemand').innerHTML =
+    Math.round(total_demand) + '<span class="unit">MW</span>';
+  document.getElementById('statSupply').innerHTML =
+    Math.round(totalSupply) + '<span class="unit">MW</span>';
 
-  // efficiency ring colour
   const effEl = document.getElementById('statEff');
-  effEl.style.color = efficiency_after >= 85 ? '#a3e635' : efficiency_after >= 70 ? '#f59e0b' : '#ef4444';
+  effEl.innerHTML = efficiency_after + '<span class="unit">%</span>';
+  effEl.style.color =
+    efficiency_after >= 90 ? '#a3e635' :
+    efficiency_after >= 75 ? '#f59e0b' : '#ef4444';
 
-  // optimization summary
+  // ── Optimization summary ──
   const unserved = Math.max(0, Math.round(total_demand - total_allocated));
-  const saved    = Math.round(supply - total_demand + (total_demand - total_allocated));
-  const co2      = (saved * 0.0002).toFixed(1);
-  const riskLabel = status === 'Balanced' ? 'Low' : status === 'Constrained' ? 'Medium' : 'High';
-  const riskColor = status === 'Balanced' ? '#22c55e' : status === 'Constrained' ? '#f59e0b' : '#ef4444';
+  const surplus  = Math.max(0, Math.round(totalSupply - total_allocated));
+  const gain     = Math.max(0, efficiency_after - (efficiency_before || 68)).toFixed(1);
+  const riskColor =
+    status === 'Balanced'         ? '#22c55e' :
+    status === 'Constrained'      ? '#f59e0b' : '#ef4444';
 
-  document.getElementById('optRisk').textContent    = riskLabel;
+  document.getElementById('optRisk').textContent    = status;
   document.getElementById('optRisk').style.color    = riskColor;
-  document.getElementById('optSaved').textContent   = Math.max(0,saved) + ' MW';
-  document.getElementById('optUnserved').textContent= unserved + ' MW';
-  document.getElementById('optCo2').textContent     = '+' + Math.max(0, (efficiency_after - 68)).toFixed(1) + '%';
+  document.getElementById('optSaved').textContent   = surplus + ' MW';
+  document.getElementById('optUnserved').textContent = unserved + ' MW';
+  document.getElementById('optCo2').textContent      = '+' + gain + '%';
 
-  // donut update — map allocations to zone order
-  const zoneKeyMap = {
-    'Zone A': 'Zone A',
-    'Zone B': 'Zone B',
-    'Zone C': 'Zone C',
-  };
-  const newMW = ZONES.map((z,i) => {
-    const key = zoneKeyMap[z];
-    return key && allocations[key] ? Math.round(allocations[key]) : ZONE_MW[i];
-  });
+  // ── Donut ──
+  const newMW = ZONES.map(z =>
+    allocations[z] !== undefined ? Math.round(allocations[z]) : 0
+  );
   donutChart.data.datasets[0].data = newMW;
   donutChart.update();
   document.getElementById('donutCentre').innerHTML =
-    Math.round(supply) + '<br><span style="font-size:11px;font-weight:400">MW</span>';
+    Math.round(totalSupply) + '<br><span style="font-size:11px;font-weight:400">MW</span>';
   buildLegend(newMW);
 
-  // line chart — shift predicted curve up/down with demand
+  // ── Line chart — scale predicted curve to new total demand ──
   const scale = total_demand / 850;
-  lineChart.data.datasets[1].data = predictedBase.map(v => Math.round(v * scale));
+  lineChart.data.datasets[1].data = predictBase.map(v => Math.round(v * scale));
   lineChart.update();
 
-  // alerts panel
-  const alertList = document.getElementById('alertList');
-  const now = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
-  const systemAlerts = alerts.map(a => ({
-    dot: 'dot-red', msg: a.replace('⚠ ALERT: ',''), time: `Today, ${now}`
+  // ── Alerts panel ──
+  const now = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  const alertItems = alerts.map(a => ({
+    dot: 'dot-red',
+    msg: a.replace('⚠ ALERT: ', ''),
+    time: `Today, ${now}`
   }));
-  systemAlerts.push({ dot: 'dot-blue', msg: `Optimization completed — ${status}`, time: `Today, ${now}` });
-  alertList.innerHTML = systemAlerts.slice(0,4).map(a => `
-    <div class="alert-item">
-      <div class="alert-dot ${a.dot}"></div>
-      <div>
-        <div class="alert-msg">${a.msg}</div>
-        <div class="alert-time">${a.time}</div>
-      </div>
-    </div>`).join('');
-  if (!systemAlerts.length) alertList.innerHTML = `
-    <div class="alert-item"><div class="alert-dot dot-blue"></div>
-    <div><div class="alert-msg">All zones operating normally</div>
-    <div class="alert-time">Today, ${now}</div></div></div>`;
+  alertItems.push({
+    dot: 'dot-blue',
+    msg: `Optimization complete — ${status}`,
+    time: `Today, ${now}`
+  });
+  if (surplus > 0) {
+    alertItems.push({
+      dot: 'dot-yellow',
+      msg: `${surplus} MW surplus available for redistribution`,
+      time: `Today, ${now}`
+    });
+  }
+
+  document.getElementById('alertList').innerHTML =
+    alertItems.slice(0, 4).map(a => `
+      <div class="alert-item">
+        <div class="alert-dot ${a.dot}"></div>
+        <div>
+          <div class="alert-msg">${a.msg}</div>
+          <div class="alert-time">${a.time}</div>
+        </div>
+      </div>`).join('');
 }
 
-// ── Simulate optimization locally (fallback when Flask isn't running) ─────
+// ── Local simulation fallback (when Flask is offline) ───────────────────────
 function localOptimize(demands, supply) {
   const priority = { 'Zone A': 3, 'Zone B': 2, 'Zone C': 1 };
-  const sorted = Object.entries(demands).sort((a,b) => (priority[b[0]]||0) - (priority[a[0]]||0));
-  let remaining = supply;
-  const allocations = {};
+  const sorted   = Object.entries(demands).sort(
+    (a, b) => (priority[b[0]] || 0) - (priority[a[0]] || 0)
+  );
+  let remaining      = supply;
+  const allocations  = {};
   for (const [z, d] of sorted) {
-    const alloc = Math.min(d, remaining);
+    const alloc   = Math.min(d, remaining);
     allocations[z] = Math.round(alloc);
-    remaining = Math.max(0, remaining - alloc);
+    remaining     = Math.max(0, remaining - alloc);
   }
-  const total_demand    = Object.values(demands).reduce((a,b)=>a+b,0);
-  const total_allocated = Object.values(allocations).reduce((a,b)=>a+b,0);
-  const efficiency_after  = Math.round((total_allocated / total_demand) * 100 * 10) / 10;
+  const total_demand    = Object.values(demands).reduce((a, b) => a + b, 0);
+  const total_allocated = Object.values(allocations).reduce((a, b) => a + b, 0);
+  const efficiency_after  = total_demand > 0
+    ? Math.round((total_allocated / total_demand) * 1000) / 10
+    : 0;
   const efficiency_before = 68;
   const alerts = Object.entries(allocations)
-    .filter(([z,a]) => a < demands[z] * 0.8)
-    .map(([z,a]) => `⚠ ALERT: ${z} underserved — ${Math.round(demands[z]-a)} MW deficit`);
-  const status = alerts.length === 0 ? 'Balanced' : efficiency_after >= 85 ? 'Constrained' : 'Critical Overload';
-  return { allocations, total_demand, total_allocated, efficiency_after, efficiency_before, alerts, status };
+    .filter(([z, a]) => a < demands[z] * 0.8)
+    .map(([z, a]) =>
+      `⚠ ALERT: ${z} underserved — ${Math.round(demands[z] - a)} MW deficit`
+    );
+  const status =
+    alerts.length === 0    ? 'Balanced' :
+    efficiency_after >= 85 ? 'Constrained' : 'Critical Overload';
+  return {
+    allocations, total_demand, total_allocated,
+    efficiency_after, efficiency_before, alerts, status
+  };
 }
 
-// ── Run button ────────────────────────────────────────────────────────────
+// ── Helper: map time slot / demand level → hour & temp for /predict ─────────
+const HOUR_MAP = { Morning: 8, Afternoon: 14, Evening: 19, Night: 23 };
+const TEMP_MAP = { Low: 20, Medium: 28, High: 36 };
+
+// ── Run button ───────────────────────────────────────────────────────────────
 document.getElementById('runBtn').addEventListener('click', async () => {
-  const timeSlot   = document.getElementById('ctrlTime').value;
-  const demandLvl  = document.getElementById('ctrlDemand').value;
-  const supply     = parseFloat(document.getElementById('ctrlSupply').value) || 950;
-  const renewable  = parseFloat(document.getElementById('ctrlRenew').value) || 150;
+  const timeSlot  = document.getElementById('ctrlTime').value;
+  const demandLvl = document.getElementById('ctrlDemand').value;
+  const gridSupply     = parseFloat(document.getElementById('ctrlSupply').value) || 800;
+  const renewable      = parseFloat(document.getElementById('ctrlRenew').value) || 150;
+  const totalSupply    = gridSupply + renewable;
 
   document.getElementById('loader').classList.add('show');
 
   try {
-    // Step 1: predict
-    const predResp = await fetch('/predict', {
+    // ── Call /predict — Flask returns zone_predictions + optimization ─────
+    const resp = await fetch('/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ time_slot: timeSlot, demand_level: demandLvl,
-                             available_supply: supply, renewable_supply: renewable })
+      body: JSON.stringify({
+        hour_of_day:      HOUR_MAP[timeSlot],
+        temp:             TEMP_MAP[demandLvl],
+        grid_supply:      gridSupply,
+        renewable_supply: renewable
+        // total_supply is computed inside app.py as grid + renewable
+      })
     });
 
-    let predictions;
-    if (predResp.ok) {
-      const predData = await predResp.json();
-      predictions = predData.predictions;
-    } else {
-      throw new Error('predict endpoint not available');
-    }
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
-    // Step 2: optimize
-    const optResp = await fetch('/optimize', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ zone_demands: predictions, available_supply: supply })
-    });
+    const data = await resp.json();
 
-    if (!optResp.ok) throw new Error('optimize endpoint not available');
-    const optResult = await optResp.json();
-    updateDashboard(optResult, supply);
+    // ── FIX: use data.optimization (returned by /predict directly) ────────
+    // data = { zone_predictions: {...}, optimization: { efficiency_after, ... } }
+    if (!data.optimization) throw new Error('optimization key missing in response');
+
+    updateDashboard(data.optimization, totalSupply);
+
+    // Show LIVE badge
+    document.getElementById('apiBadge').textContent = '● LIVE';
+    document.getElementById('apiBadge').className   = 'api-badge api-live';
 
   } catch (err) {
-    // Flask not running — use local simulation so dashboard is still interactive
-    console.warn('Flask not reachable, running local simulation:', err.message);
-    const tempMap = { Low: 20, Medium: 28, High: 36 };
-    const hourMap = { Morning: 8, Afternoon: 14, Evening: 19, Night: 23 };
-    const hour = hourMap[timeSlot];
-    const temp = tempMap[demandLvl];
-    // Simple heuristic demand estimate matching ML model patterns
-    const baseLoad = supply * 0.6;
-    const peakFactor = temp > 30 ? 1.25 : temp > 25 ? 1.1 : 0.9;
-    const predictions = {
-      'Zone A': Math.round(baseLoad * 0.39 * peakFactor),
-      'Zone B': Math.round(baseLoad * 0.33 * peakFactor),
-      'Zone C': Math.round(baseLoad * 0.28 * peakFactor),
+    // Flask not reachable — run local simulation so UI stays interactive
+    console.warn('Flask not reachable, using local simulation:', err.message);
+
+    const base = totalSupply * 0.6;
+    const peak = TEMP_MAP[demandLvl] > 30 ? 1.25 : TEMP_MAP[demandLvl] > 25 ? 1.1 : 0.9;
+    const demands = {
+      'Zone A': Math.round(base * 0.39 * peak),
+      'Zone B': Math.round(base * 0.33 * peak),
+      'Zone C': Math.round(base * 0.28 * peak),
     };
-    const optResult = localOptimize(predictions, supply);
-    updateDashboard(optResult, supply);
+    const result = localOptimize(demands, totalSupply);
+    updateDashboard(result, totalSupply);
+
+    // Show SIMULATION badge
+    document.getElementById('apiBadge').textContent = '● SIMULATION';
+    document.getElementById('apiBadge').className   = 'api-badge api-sim';
   }
 
   document.getElementById('loader').classList.remove('show');
