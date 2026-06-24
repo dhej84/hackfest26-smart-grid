@@ -1,165 +1,115 @@
+⚡ Smart Grid AI: Demand Prediction & Priority-Based Power Optimization
 
+An AI-powered smart grid simulation system that predicts electricity demand using Machine Learning and optimizes power distribution using a priority-aware rule-based allocation engine. The system demonstrates how data-driven intelligence can improve energy distribution efficiency, prevent overloads, and ensure stable grid operation across multiple zones.
 
----
+🚀 Features
 
-# ⚡ Smart Grid AI: Demand Prediction & Optimization
+📊 Synthetic smart grid dataset generation simulating real-world demand patterns
+🤖 Demand prediction using Random Forest Regression
+⚙️ Priority-based power allocation engine
+⚡ Overload detection and underserve monitoring system
+🌍 Multi-zone simulation (Zone A, Zone B, Zone C)
+📈 Model evaluation using MAE and R² score
+💾 Model persistence using Joblib
+📊 Zone-level analytics with allocation transparency
 
-An AI-based smart grid simulation system that predicts electricity demand using Machine Learning and optimizes power distribution using rule-based logic. The system demonstrates how data-driven intelligence can improve energy allocation efficiency in a multi-zone electrical grid.
-
----
-
-## 🚀 Features
-
-* 📊 Synthetic smart grid dataset generation
-* 🤖 Demand prediction using Random Forest ML model
-* ⚙️ Rule-based optimization engine for power allocation
-* ⚡ Overload detection system
-* 🌍 Multi-zone simulation (Zone A, Zone B, Zone C)
-* 📈 Model evaluation using MAE and R² score
-* 💾 Model persistence using Joblib
-
----
-
-## 🏗️ System Flow
-
-### 1. 📊 Data Generation
-
-* Creates synthetic electricity demand dataset
-* Simulates real-world load variations (peak, normal, low demand)
-* Generates multi-zone grid data
+🏗️ System Flow
+1. 📊 Data Generation
+Synthetic dataset simulating electricity demand fluctuations
+Models peak, normal, and low load conditions
+Multi-zone grid structure (Zone A, B, C)
 
 ⬇️
 
-### 2. 🤖 Machine Learning Model
-
-* Uses Random Forest Regressor
-* Learns demand patterns from historical data
-* Predicts future electricity demand per zone
-
-⬇️
-
-### 3. ⚙️ Optimization Engine
-
-* Compares predicted demand vs available supply
-* Allocates power efficiently across zones
-* Ensures balanced and fair distribution
-
-Rules:
-
-* If demand ≤ supply → normal allocation
-* If demand > supply → proportional redistribution
-* If overload → trigger warning state
+2. 🤖 Machine Learning Model
+Random Forest Regressor used for demand prediction
+Learns historical demand patterns
+Outputs predicted demand per zone
 
 ⬇️
 
-### 4. ⚡ Overload Detection
+3. ⚙️ Priority-Based Optimization Engine
 
-* Detects critical load conditions in real time
-* Flags zones as:
+A rule-driven allocation system that distributes available power based on zone priority:
 
-  * 🟢 Stable
-  * 🟡 Warning
-  * 🔴 Critical
-* Prevents cascading grid failure
+Zone A → Highest priority
+Zone B → Medium priority
+Zone C → Lowest priority
+
+Allocation Logic:
+
+Higher priority zones are served first
+Remaining supply is distributed sequentially
+Ensures critical zones receive stable power first
 
 ⬇️
 
-### 5. 📊 Output Layer
+4. ⚡ Load Monitoring System
+Detects underserved zones using threshold-based evaluation (80%)
+Flags deficit conditions per zone
+Computes system-wide efficiency after allocation
 
-* Displays final power allocation
-* Shows predicted vs actual demand
-* Provides grid status summary
+Zone Status Indicators:
 
----
+🟢 Stable
+🟡 Warning (underserved)
+🔴 Critical (high deficit / overload condition)
 
-## 📊 Model Performance
+⬇️
 
-The ML model is evaluated using:
+5. 📊 Output Analytics Layer
 
-* 📉 Mean Absolute Error (MAE) → prediction accuracy
-* 📈 R² Score → model goodness of fit
+Provides detailed system insights:
 
-These metrics validate how well the system learns electricity demand behavior.
+Total demand vs supply comparison
+Final allocated power per zone
+Efficiency after optimization
+Zone-wise served percentage
+System status and alerts
+⚙️ Optimization Logic
 
----
+The system uses a priority-first greedy allocation strategy:
 
-## ⚙️ Optimization Logic
+Zones are sorted by priority level
+Available supply is allocated starting from highest priority zone
+If demand exceeds supply, allocation is capped
+Underserve detection triggers alerts when served ratio < 80%
+Final system status is computed based on efficiency and overload conditions
+📊 Model Performance
 
-The system follows rule-based decision logic:
+Evaluation metrics used:
 
-* Demand ≤ Supply → allocate normally
-* Demand > Supply → redistribute load
-* Overload → trigger warning system
-* Maintain stability across all zones
-
----
-
-## ⚡ Overload Handling
-
-* Detects overloaded zones instantly
-* Redistributes excess load to stable zones
-* Prevents grid instability
-* Maintains balanced power distribution
-
----
-
-## 📦 Installation
-
-```bash
+📉 Mean Absolute Error (MAE) → prediction accuracy
+📈 R² Score → model fit quality
+📦 Installation
 git clone https://github.com/dhej84/hackfest26-smart-grid.git
 cd hackfest26-smart-grid
 pip install -r requirements.txt
-```
-
----
-
-## 🚀 How to Run
-
-### 1️⃣ Train ML Model
-
-```bash
+🚀 How to Run
+1️⃣ Train ML Model
 python smart_grid_model.py
-```
-
-### 2️⃣ Run Optimization Engine
-
-```bash
+2️⃣ Run Optimization Engine
 python optimization.py
-```
-
-### 3️⃣ Start Flask App
-
-```bash
+3️⃣ Start Flask App
 python app.py
-```
 
-Then open:
+Open in browser:
 
-```
 http://127.0.0.1:5000
-```
+🌐 API Endpoints
+📌 /predict
 
----
+Returns predicted electricity demand per zone
 
-## 🌐 API Endpoints
+📌 /optimize
 
-### 📌 `/predict`
+Runs priority-based allocation engine and returns results
 
-Returns predicted demand for all zones
+📌 /status
 
-### 📌 `/optimize`
+Returns overall grid health status
 
-Runs optimization and returns allocation results
-
-### 📌 `/status`
-
-Returns grid health status
-
----
-
-## 📂 Project Structure
-
-```
+📂 Project Structure
 smart-grid-ai/
 │
 ├── app.py
@@ -171,52 +121,52 @@ smart-grid-ai/
 ├── templates/
 ├── static/
 └── README.md
-```
-
----
-
-## 📈 Output Example
-
-```json
+📈 Sample Output
 {
   "Zone_A": {
-    "demand": 120,
-    "allocated": 110,
-    "status": "Warning"
+    "demand": 420,
+    "allocated": 400,
+    "served_pct": 95.2
   },
   "Zone_B": {
-    "demand": 90,
-    "allocated": 90,
-    "status": "Stable"
+    "demand": 300,
+    "allocated": 260,
+    "served_pct": 86.7
   },
   "Zone_C": {
-    "demand": 150,
-    "allocated": 130,
-    "status": "Critical"
+    "demand": 500,
+    "allocated": 340,
+    "served_pct": 68.0
   }
 }
-```
+💡 Future Enhancements
 
----
+🔋 Reinforcement Learning-based optimization engine
+🌦️ Weather-based demand prediction integration
+📡 Real-time IoT sensor simulation
+⚡ Dynamic pricing for energy distribution
+📊 Interactive dashboard upgrade (React)
+🧠 Multi-objective optimization (efficiency + fairness + stability)
 
-## 💡 Future Enhancements
+🧠 Idea Behind the Project
 
-* 🔋 Reinforcement Learning-based optimization
-* 🌦️ Weather-based demand prediction integration
-* 📡 Real-time IoT sensor simulation
-* 📊 Interactive dashboard (React frontend upgrade)
-* ⚡ Dynamic pricing model for energy distribution
+This project simulates how intelligent smart grids can:
 
----
+Predict electricity demand using machine learning
+Prioritize power distribution across critical zones
+Prevent overload and undersupply conditions
+Improve overall grid efficiency and stability
 
-## 🧠 Idea Behind the Project
+It demonstrates a hybrid AI + rule-based energy management system inspired by real-world power distribution challenges.
 
-This project simulates how modern smart grids can:
+⚡ Built With
 
-* predict electricity demand using AI
-* optimize distribution dynamically
-* prevent overload failures
-* improve energy efficiency across regions
+Python • Flask • Scikit-learn • Pandas • NumPy • Joblib • HTML/CSS • JavaScript
 
----
+If you want next-level polish, I can also turn this into:
 
+🔥 1-slide pitch summary (for judges)
+🔥 60-sec spoken pitch script
+🔥 “Why our project wins” comparison line vs others
+
+Just say.
