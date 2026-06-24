@@ -163,10 +163,4 @@ It demonstrates a hybrid AI + rule-based energy management system inspired by re
 
 Python • Flask • Scikit-learn • Pandas • NumPy • Joblib • HTML/CSS • JavaScript
 
-If you want next-level polish, I can also turn this into:
 
-🔥 1-slide pitch summary (for judges)
-🔥 60-sec spoken pitch script
-🔥 “Why our project wins” comparison line vs others
-
-Just say.
